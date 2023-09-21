@@ -22,3 +22,23 @@ body {
 			transparent,
 			rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
+
+.backdrop-blurry {
+	backdrop-filter: saturate(180%) blur(5px);
+	-webkit-backdrop-filter: saturate(180%) blur(5px);
+}
+
+::-webkit-scrollbar {
+	background-color: transparent;
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+
+	background-color: theme(backgroundColor.neutral.500);
+}

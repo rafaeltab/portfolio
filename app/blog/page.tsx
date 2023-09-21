@@ -2,7 +2,7 @@ import { Container } from "@src/components/container";
 
 export default function Home() {
 	return (
-		<main className="items-center justify-between h-screen pt-16 pb-16">
+		<div className="items-center justify-center">
 			<Container size="body">
 				<div className='h-screen'>
 					cool
@@ -11,6 +11,6 @@ export default function Home() {
 					cool
 				</div>
 			</Container>
-		</main>
+		</div>
 	)
 }

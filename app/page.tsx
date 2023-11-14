@@ -41,7 +41,7 @@ export default function Home() {
 							}>
 								Embark on my transformative learning journey.
 							</span>&nbsp;
-							Explore the breadth of knowledge and expertise I've acquired, where each lesson has fueled my passion for continuous growth and innovation.
+							Explore the breadth of knowledge and expertise I&apos;ve acquired, where each lesson has fueled my passion for continuous growth and innovation.
 						</Balancer>
 					</h3>
 				</div>
@@ -54,7 +54,7 @@ export default function Home() {
 							}>
 								Putting Knowledge into Action.
 							</span>&nbsp;
-							I've harnessed the power of hands-on experience to solidify my skills, honing them into tools I use to craft exceptional solutions and drive continuous improvement.
+							I&apos;ve harnessed the power of hands-on experience to solidify my skills, honing them into tools I use to craft exceptional solutions and drive continuous improvement.
 						</Balancer>
 					</h3>
 				</div>

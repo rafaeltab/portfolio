@@ -1,4 +1,4 @@
-name: pnpm Example Workflow
+name: Lint
 on:
   push:
     branches: [main]

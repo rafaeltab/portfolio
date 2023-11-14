@@ -1,3 +1,4 @@
+import { Play } from "next/font/google";
 import { RefObject, useEffect, useRef } from "react";
 
 export type ThreadElement = {
@@ -20,7 +21,7 @@ export function GitThread(props: { thread: ThreadElement[] }) {
 
 		const divBox = divRef.current.getBoundingClientRect();
 
-		if(!divBox) return;
+		if (!divBox) return;
 
 		const ctx = canvas.getContext('2d');
 
@@ -32,13 +33,21 @@ export function GitThread(props: { thread: ThreadElement[] }) {
 
 		var threadBoundingClients = props.thread
 			.map(x => screenToCanvasSpace(canvas, x.relativeTo.current!.getBoundingClientRect()));
-		
+
 		const pointX = 10;
 
+		let inLine = false;
 		for (var threadBoundingClient of threadBoundingClients) {
 			var point = {
 				x: pointX,
 				y: threadBoundingClient.y + threadBoundingClient.height / 2
+			}
+
+			if (inLine) {
+				ctx.strokeStyle = 'blue';
+				ctx.lineTo(point.x, point.y);
+				ctx.stroke();
+				ctx.closePath();
 			}
 
 			ctx.beginPath();
@@ -46,6 +55,10 @@ export function GitThread(props: { thread: ThreadElement[] }) {
 			ctx.fillStyle = 'blue';
 			ctx.fill();
 			ctx.closePath();
+
+			ctx.beginPath();
+			ctx.moveTo(point.x, point.y);
+			inLine = true;
 		}
 	}, [props.thread]);
 
@@ -56,10 +69,10 @@ export function GitThread(props: { thread: ThreadElement[] }) {
 	</div>);
 }
 
-function screenToCanvasSpace(canvas: HTMLCanvasElement, box: DOMRect): {[x in "x" | "y" | "width" | "height"]: number}{
+function screenToCanvasSpace(canvas: HTMLCanvasElement, box: DOMRect): { [x in "x" | "y" | "width" | "height"]: number } {
 	var canvasRect = canvas.getBoundingClientRect();
 
-	if(!canvasRect) return box;
+	if (!canvasRect) return box;
 
 	return {
 		x: box.x - canvasRect.x,

@@ -4,8 +4,8 @@ import Image from 'next/image'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Container } from '@src/components/container'
-import { usePathname } from 'next/navigation'
 import { NavLink } from '@src/components/nav/navlink';
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -42,6 +42,7 @@ export default function RootLayout({
 					{children}
 				</main>
 
+				<Analytics />
 			</body>
 		</html>
 	)

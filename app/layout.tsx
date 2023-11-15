@@ -63,7 +63,7 @@ function Body({ children }: React.PropsWithChildren) {
 				</Container>
 			</header>
 
-			<main className="h-screen overflow-y-scroll dark:bg-black bg-white">
+			<main className="h-screen overflow-y-scroll">
 				{children}
 			</main>
 

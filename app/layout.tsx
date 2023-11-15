@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google'
 import { Container } from '@src/components/container'
 import { NavLink } from '@src/components/nav/navlink';
 import { Analytics } from "@vercel/analytics/react";
+import { ThemeProvider, useTheme } from 'next-themes';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,34 +17,52 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({
 	children,
-}: {
-	children: React.ReactNode
-}) {
+}: React.PropsWithChildren) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
-				<header
-					className="fixed top-0 w-full h-16 z-10 overflow-hidden border-b border-solid border-neutral-700 bg-opacity-60 backdrop-blurry">
-					<Container size='nav'>
-						<nav className='flex items-center h-16 gap-12 text-sm'>
-							<a href='/'>
-								<Image src={"MyProfilePicFullNoBack.svg"} alt={"Rafaeltab"} width={140} height={140} />
-							</a>
-							<div id='nav-links' className='flex gap-6 text-neutral-500'>
-								<NavLink href="/tech" title="Tech" />
-								<NavLink href="/projects" title="Projects" />
-								<NavLink href="/timeline" title="Timeline" />
-							</div>
-						</nav>
-					</Container>
-				</header>
-
-				<main className="h-screen overflow-y-scroll">
+			<Body>
+				<Providers>
 					{children}
-				</main>
-
-				<Analytics />
-			</body>
+				</Providers>
+			</Body>
 		</html>
 	)
+}
+
+function Providers({ children }: React.PropsWithChildren) {
+	return (
+		<ThemeProvider enableSystem={true} defaultTheme="dark" attribute="class">
+			{children}
+		</ThemeProvider>
+	);
+}
+
+function Body({ children }: React.PropsWithChildren) {
+	// const { theme } = useTheme();
+	// const themeClass = theme == "dark" ? " dark" : "";
+	return (
+		<body className={inter.className}>
+			<header
+				className="fixed top-0 w-full h-16 z-10 overflow-hidden border-b border-solid border-neutral-700 bg-opacity-60 backdrop-blurry">
+				<Container size='nav'>
+					<nav className='flex items-center h-16 gap-12 text-sm'>
+						<a href='/'>
+							<Image src={"MyProfilePicFullNoBack.svg"} alt={"Rafaeltab"} width={140} height={140} />
+						</a>
+						<div id='nav-links' className='flex gap-6 text-neutral-500'>
+							<NavLink href="/tech" title="Tech" />
+							<NavLink href="/projects" title="Projects" />
+							<NavLink href="/timeline" title="Timeline" />
+						</div>
+					</nav>
+				</Container>
+			</header>
+
+			<main className="h-screen overflow-y-scroll">
+				{children}
+			</main>
+
+			<Analytics />
+		</body>
+	);
 }

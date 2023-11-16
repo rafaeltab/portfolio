@@ -7,6 +7,8 @@ import { Container } from '@src/components/container'
 import { NavLink } from '@src/components/nav/navlink';
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider, useTheme } from 'next-themes';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComputer, faLightbulb, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,11 +22,13 @@ export default function RootLayout({
 }: React.PropsWithChildren) {
 	return (
 		<html lang="en">
-			<Body>
+			<body className={inter.className + " dark:bg-black bg-white"}>
 				<Providers>
-					{children}
+					<Body>
+						{children}
+					</Body>
 				</Providers>
-			</Body>
+			</body>
 		</html>
 	)
 }
@@ -38,10 +42,8 @@ function Providers({ children }: React.PropsWithChildren) {
 }
 
 function Body({ children }: React.PropsWithChildren) {
-	// const { theme } = useTheme();
-	// const themeClass = theme == "dark" ? " dark" : "";
 	return (
-		<body className={inter.className}>
+		<>
 			<header
 				className="fixed top-0 w-full h-16 z-10 overflow-hidden border-b border-solid border-neutral-700 bg-opacity-60 backdrop-blurry">
 				<Container size='nav'>
@@ -49,10 +51,13 @@ function Body({ children }: React.PropsWithChildren) {
 						<a href='/'>
 							<Image src={"MyProfilePicFullNoBack.svg"} alt={"Rafaeltab"} width={140} height={140} />
 						</a>
-						<div id='nav-links' className='flex gap-6 text-neutral-500'>
+						<div id='nav-links' className='flex gap-6 dark:text-neutral-500 text-neutral-900'>
 							<NavLink href="/tech" title="Tech" />
 							<NavLink href="/projects" title="Projects" />
 							<NavLink href="/timeline" title="Timeline" />
+						</div>
+						<div className="ml-auto">
+							<ThemeSwitch />
 						</div>
 					</nav>
 				</Container>
@@ -63,6 +68,35 @@ function Body({ children }: React.PropsWithChildren) {
 			</main>
 
 			<Analytics />
-		</body>
+		</>
+	);
+}
+
+const themes = {
+	"dark": (<FontAwesomeIcon icon={faMoon} />),
+	"light": (<FontAwesomeIcon icon={faLightbulb} />),
+	"system": (<FontAwesomeIcon icon={faComputer} />),
+} as const
+
+function ThemeSwitch() {
+	const { theme } = useTheme();
+
+	if (theme !== undefined && theme in themes) {
+		const selectedTheme = theme as keyof typeof themes;
+
+		return <ThemeButton theme={selectedTheme}>{themes[selectedTheme]}</ThemeButton>
+	}
+	return <ThemeButton theme="dark">{themes.dark}</ThemeButton>;
+}
+
+function ThemeButton(props: { theme: keyof typeof themes } & React.PropsWithChildren) {
+	const { setTheme } = useTheme();
+	const themeKeys = Object.keys(themes) as (keyof typeof themes)[];
+	return (
+		<button onClick={() => {
+			setTheme(themeKeys[(themeKeys.indexOf(props.theme) + 1) % themeKeys.length])
+		}} className='dark:text-neutral-500 text-neutral-900'>
+			{props.children}
+		</button>
 	);
 }

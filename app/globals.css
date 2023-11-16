@@ -16,13 +16,6 @@
 	}
 }
 
-body {
-	color: rgb(var(--foreground-rgb));
-	background: linear-gradient(to bottom,
-			transparent,
-			rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-}
-
 .backdrop-blurry {
 	backdrop-filter: saturate(180%) blur(5px);
 	-webkit-backdrop-filter: saturate(180%) blur(5px);

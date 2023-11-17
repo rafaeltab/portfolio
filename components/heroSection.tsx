@@ -11,6 +11,7 @@ export const heroColors = [
 export function HeroSection() {
 	const [colorTurn, setColorTurn] = useState<0 | 1 | 2>(0);
 	const {theme} = useTheme();
+	const [learnMoreHover, setLearnMoreHover] = useState(false);
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setColorTurn(((colorTurn + 1) % 3) as 0 | 1 | 2)
@@ -70,11 +71,13 @@ export function HeroSection() {
 					</Balancer>
 				</p>
 				<div className="flex gap-16">
-					<div className="relative h-12 w-36">
+					<div className={`relative  h-12 w-36 ${learnMoreHover ? "backdrop-blurry-after" : ""} after:w-44 after:h-44 after:absolute after:top-1/2 after:right-1/2 after:translate-x-1/2 after:-translate-y-1/2 after:flex after:justify-center after:items-center`}>
 						<span className={learnMoreLearnClass}></span>
 						<span className={learnMorePracticeClass}></span>
 						<span className={learnMoreInspireClass}></span>
-						<a href="#" className="left-0 right-0 top-0 bottom-0 justify-center flex items-center z-10 absolute rounded-lg dark:bg-black bg-white dark:text-white text-black hover:bg-transparent ">Learn more</a>
+						<a href="#" onMouseOver={() => setLearnMoreHover(true)} onMouseOut={() => setLearnMoreHover(false)} className="left-0 right-0 top-0 bottom-0 justify-center flex items-center z-10 absolute rounded-lg dark:bg-black bg-white dark:text-white text-black">
+							Learn more
+						</a>
 					</div>
 					<a href="#" className="h-12 w-36 rounded-lg dark:text-black dark:bg-white text-white bg-black flex justify-center items-center font-bold">
 						Contact me

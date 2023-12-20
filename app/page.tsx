@@ -11,15 +11,24 @@ export default function Home() {
 	const threadElements = [
 		{
 			relativeTo: useRef<HTMLDivElement | null>(null),
-			kind: "commit"
+			kind: "commit",
+			color: "rgb(248,113,113)",
+			beforeGradient: [],
+			afterGradient: ["rgb(248,113,113)"],
 		},
 		{
 			relativeTo: useRef<HTMLDivElement | null>(null),
-			kind: "commit"
+			kind: "commit",
+			color: "rgb(74,222,128)",
+			beforeGradient: ["rgb(74,222,128)"],
+			afterGradient: ["rgb(74,222,128)"],
 		},
 		{
 			relativeTo: useRef<HTMLDivElement | null>(null),
-			kind: "commit"
+			kind: "commit",
+			color: "rgb(96, 165, 250)",
+			beforeGradient: ["rgb(96, 165, 250)"],
+			afterGradient: [],
 		},
 		// {
 		// 	relativeTo: useRef<HTMLDivElement | null>(null),
@@ -39,7 +48,7 @@ export default function Home() {
 							<span className={
 								"text-red-400"
 							}>
-								 Embark on my transformative learning journey.
+								Embark on my transformative learning journey.
 							</span>&nbsp;
 							Explore the breadth of knowledge and expertise I&apos;ve acquired, where each lesson has fueled my passion for continuous growth and innovation.
 						</Balancer>

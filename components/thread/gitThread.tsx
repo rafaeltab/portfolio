@@ -1,9 +1,11 @@
-import { Play } from "next/font/google";
 import { RefObject, useEffect, useRef } from "react";
 
 export type ThreadElement = {
 	relativeTo: RefObject<HTMLElement | undefined>,
-	kind: "commit" | "branch-marge" | "branch" | "branch-rebase"
+	kind: "commit" | "branch-marge" | "branch" | "branch-rebase",
+	color: string
+	beforeGradient: string[],
+	afterGradient: string[]
 }
 
 export function GitThread(props: { thread: ThreadElement[] }) {
@@ -32,33 +34,69 @@ export function GitThread(props: { thread: ThreadElement[] }) {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 		var threadBoundingClients = props.thread
-			.map(x => screenToCanvasSpace(canvas, x.relativeTo.current!.getBoundingClientRect()));
+			.map(x => ({ ...screenToCanvasSpace(canvas, x.relativeTo.current!.getBoundingClientRect()), origin: x }));
 
-		const pointX = 10;
+		const pointX = 30;
 
 		let inLine = false;
-		for (var threadBoundingClient of threadBoundingClients) {
+		for (let i = 0; i < threadBoundingClients.length; i++) {
+			let threadBoundingClient = threadBoundingClients[i];
+
 			var point = {
 				x: pointX,
-				y: threadBoundingClient.y + threadBoundingClient.height / 2
+				y: getY(threadBoundingClient)
 			}
 
 			if (inLine) {
-				ctx.strokeStyle = 'blue';
-				ctx.lineTo(point.x, point.y);
+				let gradient = ctx.createLinearGradient(pointX, getY(threadBoundingClients[i - 1]), pointX, point.y);
+				addStops(gradient, threadBoundingClients[i - 1].origin, threadBoundingClient.origin);
+				ctx.lineWidth = 4;
+				ctx.strokeStyle = gradient;
+				ctx.lineCap = "round";
+				ctx.lineTo(point.x, point.y - 20);
 				ctx.stroke();
 				ctx.closePath();
 			}
 
 			ctx.beginPath();
-			ctx.arc(point.x, point.y, 5, 0, 2 * Math.PI);
-			ctx.fillStyle = 'blue';
-			ctx.fill();
-			ctx.closePath();
-
-			ctx.beginPath();
-			ctx.moveTo(point.x, point.y);
+			ctx.moveTo(point.x, point.y + 20);
 			inLine = true;
+		}
+
+		for (let threadBoundingClient of threadBoundingClients) {
+			var point = {
+				x: pointX,
+				y: getY(threadBoundingClient)
+			}
+
+			const gradientCount = 8;
+			for (let i = 0; i < gradientCount; i++) {
+				// ctx.beginPath();
+				// ctx.arc(point.x, point.y, 40, 0, 2 * Math.PI);
+				// ctx.fillStyle = "black";
+				// ctx.fill();
+				// ctx.closePath();
+				ctx.shadowColor = threadBoundingClient.origin.color;
+				ctx.shadowBlur = (i / gradientCount) * 25;
+				ctx.shadowOffsetX = 0;
+				ctx.shadowOffsetY = 0;
+				ctx.beginPath();
+				ctx.arc(point.x, point.y, 4, 0, 2 * Math.PI);
+				ctx.fill();
+				ctx.closePath();
+			}
+
+			for (let threadBoundingClient of threadBoundingClients) {
+				ctx.beginPath();
+				ctx.arc(point.x, point.y, 4, 0, 2 * Math.PI);
+				ctx.fillStyle = threadBoundingClient.origin.color;
+				ctx.fillStyle = "black";
+				ctx.lineWidth = 3;
+				ctx.strokeStyle = "white";
+				ctx.fill();
+				ctx.stroke();
+				ctx.closePath();
+			}
 		}
 	}, [props.thread]);
 
@@ -68,6 +106,25 @@ export function GitThread(props: { thread: ThreadElement[] }) {
 		</canvas>
 	</div>);
 }
+
+function getY(threadBoundingClient: { y: number, height: number }) {
+	return threadBoundingClient.y + threadBoundingClient.height / 2
+}
+
+function addStops(gradient: CanvasGradient, a: ThreadElement, b: ThreadElement) {
+	const totalGradient = a.afterGradient.length + b.beforeGradient.length;
+
+	for (let i = 0; i < a.afterGradient.length; i++) {
+		let aElement = a.afterGradient[i];
+		gradient.addColorStop(1 / totalGradient * i, aElement);
+	}
+
+	for (let i = a.afterGradient.length; i < totalGradient; i++) {
+		let bElement = b.beforeGradient[i - a.afterGradient.length];
+		gradient.addColorStop(1 / (totalGradient - 1) * i, bElement);
+	}
+}
+
 
 function screenToCanvasSpace(canvas: HTMLCanvasElement, box: DOMRect): { [x in "x" | "y" | "width" | "height"]: number } {
 	var canvasRect = canvas.getBoundingClientRect();

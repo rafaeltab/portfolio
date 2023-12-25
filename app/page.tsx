@@ -11,20 +11,25 @@ export default function Home() {
 	const threadElements = [
 		{
 			relativeTo: useRef<HTMLDivElement | null>(null),
-			kind: "commit"
+			kind: "commit",
+			color: "rgb(239,68,68)",
+			beforeGradient: [],
+			afterGradient: ["rgb(239,68,68)"],
 		},
 		{
 			relativeTo: useRef<HTMLDivElement | null>(null),
-			kind: "commit"
+			kind: "commit",
+			color: "rgb(34,197,94)",
+			beforeGradient: ["rgb(34,197,94)"],
+			afterGradient: ["rgb(34,197,94)"],
 		},
 		{
 			relativeTo: useRef<HTMLDivElement | null>(null),
-			kind: "commit"
+			kind: "commit",
+			color: "rgb(59,130,246)",
+			beforeGradient: ["rgb(59,130,246)"],
+			afterGradient: [],
 		},
-		// {
-		// 	relativeTo: useRef<HTMLDivElement | null>(null),
-		// 	kind: "commit"
-		// }
 	] satisfies ThreadElement[];
 
 	return (
@@ -37,9 +42,9 @@ export default function Home() {
 					<h3 className="text-4xl tracking-normal w-3/4">
 						<Balancer>
 							<span className={
-								"text-red-400"
+								"text-red-500"
 							}>
-								 Embark on my transformative learning journey.
+								Embark on my transformative learning journey.
 							</span>&nbsp;
 							Explore the breadth of knowledge and expertise I&apos;ve acquired, where each lesson has fueled my passion for continuous growth and innovation.
 						</Balancer>
@@ -50,7 +55,7 @@ export default function Home() {
 					<h3 className="text-4xl tracking-normal w-3/4">
 						<Balancer>
 							<span className={
-								"text-green-400"
+								"text-green-500"
 							}>
 								Putting Knowledge into Action.
 							</span>&nbsp;
@@ -63,7 +68,7 @@ export default function Home() {
 					<h3 className="text-4xl tracking-normal w-3/4">
 						<Balancer>
 							<span className={
-								"text-blue-400"
+								"text-blue-500"
 							}>
 								Empowering the Engineering Community.
 							</span>&nbsp;

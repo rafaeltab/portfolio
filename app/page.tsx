@@ -5,6 +5,17 @@ import { GitThread, ThreadElement } from "@src/components/thread/gitThread";
 import { useRef } from "react";
 import { HeroSection } from "@src/components/heroSection";
 import Balancer from "react-wrap-balancer";
+import { Card } from "@src/components/card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import ReactWordcloud from "react-wordcloud";
+import { Inter } from "next/font/google";
+import { TechCloud } from "@src/components/techcloud";
+
+const inter = Inter({
+	subsets: ['latin'],
+	weight: "500"
+});
 
 export default function Home() {
 
@@ -49,6 +60,34 @@ export default function Home() {
 							Explore the breadth of knowledge and expertise I&apos;ve acquired, where each lesson has fueled my passion for continuous growth and innovation.
 						</Balancer>
 					</h3>
+				</div>
+				<div className="w-full grid grid-cols-2 grid-rows-2 gap-8 my-10">
+					<Card className="row-span-2" />
+					<Card className="flex flex-col">
+						<p className="text-2xl w-full text-gray-400">Learned <span className="text-red-500 font-bold">10+</span> programming languages</p>
+						<div className="w-1/2 mx-auto">
+							<ol className="list-decimal font-bold text-xl">
+								<li className="text-red-500">C#</li>
+								<li className="text-red-500">TypeScript</li>
+								<li className="text-red-400">Dart</li>
+								<li className="text-neutral-500">Java</li>
+								<li className="text-neutral-600">Rust</li>
+								<li className="text-neutral-700">...</li>
+							</ol>
+						</div>
+						<div className="">
+							<a href="#" className="float-right text-lg font-semibold text-neutral-50">Discover all programming languages <FontAwesomeIcon icon={faArrowRight} /></a>
+						</div>
+					</Card>
+					<Card className="flex flex-col">
+						<p className="text-2xl w-full flex-1 text-gray-400">Learned <span className="text-red-500 font-bold">20+</span> technologies</p>
+						<div>
+							<TechCloud font={inter}/>
+						</div>
+						<div>
+							<a href="#" className="float-right text-lg text-neutral-50">Explore the technologies <FontAwesomeIcon icon={faArrowRight} /></a>
+						</div>
+					</Card>
 				</div>
 				<div className="pl-20">
 					<h2 ref={threadElements[1].relativeTo} className="text-2xl mb-4" >Practice</h2>

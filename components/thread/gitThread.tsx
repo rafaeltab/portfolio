@@ -1,4 +1,5 @@
-import { RefObject, useEffect, useRef } from "react";
+import { useWindowSize } from "@src/hooks/window_size";
+import { RefObject, useEffect, useRef, useState } from "react";
 
 export type ThreadElement = {
 	relativeTo: RefObject<HTMLElement | undefined>,
@@ -9,9 +10,9 @@ export type ThreadElement = {
 }
 
 export function GitThread(props: { thread: ThreadElement[] }) {
-
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
 	const divRef = useRef<HTMLDivElement | null>(null);
+	const windowSize = useWindowSize();
 
 	useEffect(() => {
 		if (!canvasRef.current) return;
@@ -28,8 +29,6 @@ export function GitThread(props: { thread: ThreadElement[] }) {
 		const ctx = canvas.getContext('2d');
 
 		if (!ctx) return;
-
-		console.log(canvas);
 
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -71,11 +70,6 @@ export function GitThread(props: { thread: ThreadElement[] }) {
 
 			const gradientCount = 8;
 			for (let i = 0; i < gradientCount; i++) {
-				// ctx.beginPath();
-				// ctx.arc(point.x, point.y, 40, 0, 2 * Math.PI);
-				// ctx.fillStyle = "black";
-				// ctx.fill();
-				// ctx.closePath();
 				ctx.shadowColor = threadBoundingClient.origin.color;
 				ctx.shadowBlur = (i / gradientCount) * 25;
 				ctx.shadowOffsetX = 0;
@@ -98,7 +92,7 @@ export function GitThread(props: { thread: ThreadElement[] }) {
 				ctx.closePath();
 			}
 		}
-	}, [props.thread]);
+	}, [props.thread, windowSize]);
 
 
 	return (<div ref={divRef} className="absolute w-full h-full mt-16 -z-10">
@@ -138,3 +132,4 @@ function screenToCanvasSpace(canvas: HTMLCanvasElement, box: DOMRect): { [x in "
 		height: box.height,
 	}
 }
+

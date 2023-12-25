@@ -41,3 +41,30 @@
 
 	background-color: theme(backgroundColor.neutral.500);
 }
+
+
+.card-gradient-back {
+	position: relative;
+}
+
+.card-gradient-back::before {
+	background: radial-gradient(
+		800px circle at var(--mouse-x) var(--mouse-y),
+		var(--color),
+		transparent 60%
+	);
+	position:absolute;
+	z-index:2;
+	content: "";
+	border-radius: inherit;
+	height: 100%;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	opacity: 0;
+	transition: opacity 500ms;
+}
+
+.card-gradient-back:hover::before {
+	opacity: 1;
+}

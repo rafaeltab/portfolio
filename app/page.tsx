@@ -61,11 +61,13 @@ export default function Home() {
 						</Balancer>
 					</h3>
 				</div>
-				<div className="w-full grid grid-cols-2 grid-rows-2 gap-8 my-10">
-					<Card className="row-span-2" />
-					<Card className="flex flex-col">
-						<p className="text-2xl w-full text-gray-400">Learned <span className="text-red-500 font-bold">10+</span> programming languages</p>
-						<div className="w-1/2 mx-auto">
+				<div className="w-full grid grid-cols-2 grid-flow-row-dense gap-8 my-10">
+					<Card className="row-span-2" color="rgba(239,68,68,0.1)" />
+					<Card className="flex flex-col" color="rgba(239,68,68,0.1)">
+						<Card.MainText>
+							Learned <span className="text-red-500 font-bold">10+</span> programming languages
+						</Card.MainText>
+						<div className="w-1/2 mx-auto mt-8">
 							<ol className="list-decimal font-bold text-xl">
 								<li className="text-red-500">C#</li>
 								<li className="text-red-500">TypeScript</li>
@@ -75,18 +77,20 @@ export default function Home() {
 								<li className="text-neutral-700">...</li>
 							</ol>
 						</div>
-						<div className="">
-							<a href="#" className="float-right text-lg font-semibold text-neutral-50">Discover all programming languages <FontAwesomeIcon icon={faArrowRight} /></a>
-						</div>
+						<Card.ContinueButton>
+							Discover all programming languages
+						</Card.ContinueButton>
 					</Card>
-					<Card className="flex flex-col">
-						<p className="text-2xl w-full flex-1 text-gray-400">Learned <span className="text-red-500 font-bold">20+</span> technologies</p>
+					<Card className="flex flex-col" color="rgba(239,68,68,0.10)">
+						<Card.MainText>
+							Learned <span className="text-red-500 font-bold">20+</span> technologies
+						</Card.MainText>
 						<div>
-							<TechCloud font={inter}/>
+							<TechCloud font={inter} />
 						</div>
-						<div>
-							<a href="#" className="float-right text-lg text-neutral-50">Explore the technologies <FontAwesomeIcon icon={faArrowRight} /></a>
-						</div>
+						<Card.ContinueButton>
+							Explore the technologies
+						</Card.ContinueButton>
 					</Card>
 				</div>
 				<div className="pl-20">

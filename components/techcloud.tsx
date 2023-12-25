@@ -74,6 +74,7 @@ export function TechCloud(props: { font: NextFont }) {
 				randomSeed: "4",
 				rotations: 0,
 				deterministic: true,
+				enableTooltip: false
 			}}
 			words={words}
 			callbacks={{

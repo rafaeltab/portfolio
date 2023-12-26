@@ -5,6 +5,14 @@ import { GitThread, ThreadElement } from "@src/components/thread/gitThread";
 import { useRef } from "react";
 import { HeroSection } from "@src/components/heroSection";
 import Balancer from "react-wrap-balancer";
+import { Card } from "@src/components/card";
+import { Inter } from "next/font/google";
+import { TechCloud } from "@src/components/techcloud";
+
+const inter = Inter({
+	subsets: ['latin'],
+	weight: "500"
+});
 
 export default function Home() {
 
@@ -49,6 +57,38 @@ export default function Home() {
 							Explore the breadth of knowledge and expertise I&apos;ve acquired, where each lesson has fueled my passion for continuous growth and innovation.
 						</Balancer>
 					</h3>
+				</div>
+				<div className="w-full grid grid-cols-1 md:grid-cols-2 grid-flow-row-dense gap-8 my-10">
+					<Card className="row-span-2" color="rgba(239,68,68,0.1)" />
+					<Card className="flex flex-col" color="rgba(239,68,68,0.1)">
+						<Card.MainText>
+							Learned <span className="text-red-500 font-bold">10+</span> programming languages
+						</Card.MainText>
+						<div className="w-1/2 mx-auto mt-8">
+							<ol className="list-decimal font-bold text-xl">
+								<li className="text-red-500">C#</li>
+								<li className="text-red-500">TypeScript</li>
+								<li className="text-red-400">Dart</li>
+								<li className="text-neutral-500">Java</li>
+								<li className="text-neutral-600">Rust</li>
+								<li className="text-neutral-700">...</li>
+							</ol>
+						</div>
+						<Card.ContinueButton>
+							Discover all programming languages
+						</Card.ContinueButton>
+					</Card>
+					<Card className="flex flex-col" color="rgba(239,68,68,0.10)">
+						<Card.MainText>
+							Learned <span className="text-red-500 font-bold">20+</span> technologies
+						</Card.MainText>
+						<div>
+							<TechCloud font={inter} />
+						</div>
+						<Card.ContinueButton>
+							Explore the technologies
+						</Card.ContinueButton>
+					</Card>
 				</div>
 				<div className="pl-20">
 					<h2 ref={threadElements[1].relativeTo} className="text-2xl mb-4" >Practice</h2>

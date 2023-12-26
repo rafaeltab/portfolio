@@ -6,9 +6,6 @@ import { useRef } from "react";
 import { HeroSection } from "@src/components/heroSection";
 import Balancer from "react-wrap-balancer";
 import { Card } from "@src/components/card";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
-import ReactWordcloud from "react-wordcloud";
 import { Inter } from "next/font/google";
 import { TechCloud } from "@src/components/techcloud";
 
@@ -61,7 +58,7 @@ export default function Home() {
 						</Balancer>
 					</h3>
 				</div>
-				<div className="w-full grid grid-cols-2 grid-flow-row-dense gap-8 my-10">
+				<div className="w-full grid grid-cols-1 md:grid-cols-2 grid-flow-row-dense gap-8 my-10">
 					<Card className="row-span-2" color="rgba(239,68,68,0.1)" />
 					<Card className="flex flex-col" color="rgba(239,68,68,0.1)">
 						<Card.MainText>

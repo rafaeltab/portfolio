@@ -16,6 +16,9 @@
 		"@types/react": "18.2.14",
 		"@types/react-dom": "18.2.6",
 		"@vercel/analytics": "^1.1.1",
+		"@visx/scale": "^3.5.0",
+		"@visx/text": "^3.3.0",
+		"@visx/wordcloud": "^3.3.0",
 		"autoprefixer": "10.4.14",
 		"eslint": "8.43.0",
 		"eslint-config-next": "13.4.7",
@@ -24,7 +27,6 @@
 		"postcss": "8.4.31",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"react-wordcloud": "^1.2.7",
 		"react-wrap-balancer": "^1.1.0",
 		"tailwindcss": "3.3.2",
 		"typescript": "5.1.3"

@@ -20,7 +20,7 @@ export function Card(props: CardProps) {
 	}
 
 	return (
-		<div onMouseMove={mouseMove} className={`card-gradient-back w-full p-6 bg-neutral-800 rounded-xl ${props.className != undefined ? props.className : ""}`}>
+		<div onMouseMove={mouseMove} className={`card-gradient-back w-full p-6 bg-stone-100 dark:bg-neutral-800 rounded-xl ${props.className != undefined ? props.className : ""}`}>
 			<div className="z-10">
 			{props.children}
 			</div>
@@ -29,13 +29,13 @@ export function Card(props: CardProps) {
 }
 
 Card.MainText = function MainText(props: React.PropsWithChildren) {
-	return (<p className="text-2xl w-full text-gray-400 flex-1">{props.children}</p>);
+	return (<p className="text-2xl w-full text-gray-700 dark:text-gray-400 flex-1">{props.children}</p>);
 }
 
 Card.ContinueButton = function ContinueButton(props: React.PropsWithChildren) {
 	return (
 		<div>
-			<a href="#" className="float-right text-lg font-semibold text-neutral-50">{props.children} <FontAwesomeIcon icon={faArrowRight} /></a>
+			<a href="#" className="float-right text-lg font-semibold text-neutral-900 dark:text-neutral-50">{props.children} <FontAwesomeIcon icon={faArrowRight} /></a>
 		</div>
 	);
 }

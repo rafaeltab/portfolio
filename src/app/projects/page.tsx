@@ -1,4 +1,4 @@
-import { Container } from "@src/components/container";
+import { Container } from "../../components/container";
 
 export default function Home() {
 	return (
@@ -12,5 +12,5 @@ export default function Home() {
 				</div>
 			</Container>
 		</div>
-	);
+	)
 }

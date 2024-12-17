@@ -2,8 +2,8 @@ import { NextFont } from "next/dist/compiled/@next/font";
 import { Text } from "@visx/text";
 import { scaleLog } from "@visx/scale";
 import Wordcloud from "@visx/wordcloud/lib/Wordcloud";
-import { useRef, useState } from "react";
-import { useWindowSize } from "@src/hooks/window_size";
+import { useRef } from "react";
+import { useWindowSize } from "../hooks/window_size";
 
 const words: WordData[] = [
 	{ text: "ASP.NET", value: 100 },
@@ -93,9 +93,9 @@ const fontScale = scaleLog({
 });
 
 function getWordColor(size: number) {
-	let normal = (size - minSize) / (maxSize - minSize);
+	const normal = (size - minSize) / (maxSize - minSize);
 	console.log(normal);
-	for (let color of colors) {
+	for (const color of colors) {
 		if (color.threshold <= normal) return color.color;
 	}
 	return "black";

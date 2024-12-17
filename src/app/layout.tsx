@@ -3,12 +3,13 @@
 import Image from 'next/image'
 import './globals.css'
 import { Inter } from 'next/font/google'
-import { Container } from '@src/components/container'
-import { NavLink } from '@src/components/nav/navlink';
+import { Container } from '../components/container'
+import { NavLink } from '../components/nav/navlink';
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider, useTheme } from 'next-themes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComputer, faLightbulb, faMoon } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -48,9 +49,9 @@ function Body({ children }: React.PropsWithChildren) {
 				className="fixed top-0 w-full h-16 z-20 overflow-hidden border-b border-solid border-neutral-700 bg-opacity-60 backdrop-blurry">
 				<Container size='nav'>
 					<nav className='flex items-center h-16 gap-12 text-sm'>
-						<a href='/'>
+						<Link href='/'>
 							<Image src={"MyProfilePicFullNoBack.svg"} alt={"Rafaeltab"} width={140} height={140} />
-						</a>
+						</Link>
 						<div id='nav-links' className='flex gap-6 dark:text-neutral-500 text-neutral-900'>
 							<NavLink href="/tech" title="Tech" />
 							<NavLink href="/projects" title="Projects" />

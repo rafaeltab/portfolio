@@ -20,5 +20,6 @@ const icons: IconCloudItem[] = [
 ]
 
 export function iconCloud() {
+  icons.keys();
 
 }

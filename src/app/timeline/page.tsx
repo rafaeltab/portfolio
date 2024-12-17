@@ -1,4 +1,4 @@
-import { Container } from "@src/components/container";
+import { Container } from "../../components/container";
 import Balancer from "react-wrap-balancer";
 
 export default function Home() {

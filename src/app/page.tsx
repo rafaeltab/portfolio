@@ -1,16 +1,16 @@
 "use client"
 
-import { Container } from "@src/components/container";
-import { GitThread, ThreadElement } from "@src/components/thread/gitThread";
+import { Container } from "../components/container";
+import { GitThread, ThreadElement } from "../components/thread/gitThread";
 import { useRef } from "react";
-import { HeroSection } from "@src/components/heroSection";
+import { HeroSection } from "../components/heroSection";
 import Balancer from "react-wrap-balancer";
-import { Card, CardCluster } from "@src/components/card";
+import { Card, CardCluster } from "../components/card";
 import { Inter } from "next/font/google";
-import { TechCloud } from "@src/components/techcloud";
-import { ProgressBulbs } from "@src/components/progressBulbs";
+import { TechCloud } from "../components/techcloud";
+import { ProgressBulbs } from "../components/progressBulbs";
 import Image from "next/image";
-import kurabuScreenshot from "../public/KurabuScreenshot.png";
+import kurabuScreenshot from "../../public/KurabuScreenshot.png";
 
 const inter = Inter({
     subsets: ['latin'],

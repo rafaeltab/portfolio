@@ -47,6 +47,12 @@ Card.MainText = function MainText(props: React.PropsWithChildren) {
 	</div>);
 }
 
+Card.SubText = function SubText(props: React.PropsWithChildren) {
+	return (<div className="self-start">
+		<p className="text-lg w-full self-start text-gray-700 dark:text-gray-400">{props.children}</p>
+	</div>);
+}
+
 Card.ContinueButton = function ContinueButton(props: React.PropsWithChildren) {
 	return (
 		<div className="self-end">

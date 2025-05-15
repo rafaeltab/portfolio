@@ -198,77 +198,53 @@ export default function Home() {
           </Card>
           <Card className="" color={sectionColors[1].hoverColor}>
             <Card.MainText>
-              <span className="text-red-500 font-bold">4+</span> years of
+              <span className="text-green-500 font-bold">4+</span> years of
               professional experience
             </Card.MainText>
             <div className="w-1/2 mx-auto mt-8 mb-8 flex-1 z-20">
               <ol className="list-decimal font-bold text-xl">
-                <li className="text-red-500">ASP.NET</li>
-                <li className="text-red-500">Typescript</li>
-                <li className="text-red-400">Angular</li>
+                <li className="text-green-500">ASP.NET</li>
+                <li className="text-green-500">Typescript</li>
+                <li className="text-green-400">Angular</li>
                 <li className="text-neutral-500">Flutter</li>
                 <li className="text-neutral-600">Rust</li>
                 <li className="text-neutral-700">...</li>
               </ol>
             </div>
             <Card.ContinueButton>
-              Discover all programming languages
+              Discover all professional experience
             </Card.ContinueButton>
           </Card>
           <Card color={sectionColors[1].hoverColor}>
-            <Card.MainText>Learning paths</Card.MainText>
+            <Card.MainText>Practice projects</Card.MainText>
             <div className="w-full 2xl:w-2/3 lg:w-4/5 mx-auto mt-8 mb-8 flex-1 z-20">
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-110 transition-transform duration-75">
-                <h3 className="font-semibold">Networking</h3>
-                <ProgressBulbs
-                  color="bg-red-500"
-                  borderColor="border-red-500"
-                  progress={3}
-                />
+              <div className="m-2 p-4 bg-neutral-900 rounded-md hover:scale-110 transition-transform duration-75">
+                <h3 className="font-semibold">Porti</h3>
+                <p className="mb-2">Source control service.</p>
+                <div className="text-sm flex flex-row flex-wrap gap-2">
+                  <p className="bg-orange-950 border-orange-900 bg-opacity-90 border-solid border rounded-md px-1">DDD</p>
+                  <p className="bg-blue-950 border-blue-900 bg-opacity-90 border-solid border rounded-md px-1">Rust</p>
+                  <p className="bg-red-950 border-red-900 bg-opacity-90 border-solid border rounded-md px-1">Event sourcing</p>
+                  <p className="bg-green-950 border-green-900 bg-opacity-90 border-solid border rounded-md px-1">Open Telemetry</p>
+                  <p className="bg-yellow-950 border-yellow-900 bg-opacity-90 border-solid border rounded-md px-1">KurrenDB</p>
+                </div>
               </div>
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-110 transition-transform duration-75">
-                <h3 className="font-semibold">Programming</h3>
-                <ProgressBulbs
-                  color="bg-red-500"
-                  borderColor="border-red-500"
-                  progress={5}
-                />
-              </div>
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-110 transition-transform duration-75">
-                <h3 className="font-semibold">Ethical Hacking</h3>
-                <ProgressBulbs
-                  color="bg-red-500"
-                  borderColor="border-red-500"
-                  progress={3}
-                />
-              </div>
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-110 transition-transform duration-75">
-                <h3 className="font-semibold">Artificial Intelligence</h3>
-                <ProgressBulbs
-                  color="bg-red-500"
-                  borderColor="border-red-500"
-                  progress={1}
-                />
-              </div>
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-110 transition-transform duration-75">
-                <h3 className="font-semibold">Platform Engineering</h3>
-                <ProgressBulbs
-                  color="bg-red-500"
-                  borderColor="border-red-500"
-                  progress={3}
-                />
-              </div>
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-110 transition-transform duration-75">
-                <h3 className="font-semibold">System Design</h3>
-                <ProgressBulbs
-                  color="bg-red-500"
-                  borderColor="border-red-500"
-                  progress={4}
-                />
+
+              <div className="m-2 p-4 bg-neutral-900 rounded-md hover:scale-110 transition-transform duration-75">
+                <h3 className="font-semibold">Messaging system</h3>
+                <p className="mb-2">Microservice messaging system.</p>
+                <div className="text-sm flex flex-row flex-wrap gap-2">
+                  <p className="bg-purple-950 border-purple-900 bg-opacity-90 border-solid border rounded-md px-1">Redis</p>
+                  <p className="bg-blue-950 border-blue-900 bg-opacity-90 border-solid border rounded-md px-1">Rust</p>
+                  <p className="bg-teal-950 border-teal-900 bg-opacity-90 border-solid border rounded-md px-1">Typescript</p>
+                  <p className="bg-green-950 border-green-900 bg-opacity-90 border-solid border rounded-md px-1">Kafka</p>
+                  <p className="bg-lime-950 border-lime-900 bg-opacity-90 border-solid border rounded-md px-1">gRPC</p>
+                  <p className="bg-red-950 border-red-900 bg-opacity-90 border-solid border rounded-md px-1">kubernetes</p>
+                </div>
               </div>
             </div>
             <Card.ContinueButton>
-              Discover all programming languages
+              Discover more practice projects 
             </Card.ContinueButton>
           </Card>
         </CardCluster>

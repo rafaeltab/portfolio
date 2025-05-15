@@ -1,4 +1,5 @@
 # Overview
+
 When first entering the portfolio a user will likely want to get a general idea of what it is I do and who I am.
 This means my name and titles should be front and center when opening the page.
 
@@ -8,26 +9,28 @@ Some of my most recent or best projects should also be displayed.
 # Sections
 
 ## Learn
+
 self teaching many languages, technologies and skills
 
 ## Practice
+
 - Some big projects
-    - Learning to use many technologies together
-    - Kurabu
+  - Learning to use many technologies together
+  - Kurabu
 - many small projects
-    - Learning specific technologies
+  - Learning specific technologies
 - work experience
 
-
 ## Inspire
+
 - Fancy feature friday talks
-    - Docker
-    - Kubernetes
-    - XState
+  - Docker
+  - Kubernetes
+  - XState
 - Teacher
-    - Active in typescript and turborepo community
-    - Leading teams, helping team members
-    - Mentoring fellow engineers
+  - Active in typescript and turborepo community
+  - Leading teams, helping team members
+  - Mentoring fellow engineers
 
 # Flow
 

@@ -11,6 +11,8 @@ import { TechCloud } from "../components/techcloud";
 import { ProgressBulbs } from "../components/progressBulbs";
 import Image from "next/image";
 import kurabuScreenshot from "../../public/KurabuScreenshot.png";
+import { ProgressCard } from "@/components/progressCard";
+import { Badge } from "@/components/badge";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -110,54 +112,12 @@ export default function Home() {
           <Card color={sectionColors[0].hoverColor}>
             <Card.MainText>Learning paths</Card.MainText>
             <div className="w-full 2xl:w-2/3 lg:w-4/5 mx-auto mt-8 mb-8 flex-1 z-20">
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-105 transition-transform duration-75">
-                <h3 className="font-semibold">Networking</h3>
-                <ProgressBulbs
-                  color="bg-red-500"
-                  borderColor="border-red-500"
-                  progress={3}
-                />
-              </div>
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-105 transition-transform duration-75">
-                <h3 className="font-semibold">Programming</h3>
-                <ProgressBulbs
-                  color="bg-red-500"
-                  borderColor="border-red-500"
-                  progress={5}
-                />
-              </div>
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-105 transition-transform duration-75">
-                <h3 className="font-semibold">Ethical Hacking</h3>
-                <ProgressBulbs
-                  color="bg-red-500"
-                  borderColor="border-red-500"
-                  progress={3}
-                />
-              </div>
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-105 transition-transform duration-75">
-                <h3 className="font-semibold">Artificial Intelligence</h3>
-                <ProgressBulbs
-                  color="bg-red-500"
-                  borderColor="border-red-500"
-                  progress={1}
-                />
-              </div>
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-105 transition-transform duration-75">
-                <h3 className="font-semibold">Platform Engineering</h3>
-                <ProgressBulbs
-                  color="bg-red-500"
-                  borderColor="border-red-500"
-                  progress={3}
-                />
-              </div>
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-105 transition-transform duration-75">
-                <h3 className="font-semibold">System Design</h3>
-                <ProgressBulbs
-                  color="bg-red-500"
-                  borderColor="border-red-500"
-                  progress={4}
-                />
-              </div>
+              <ProgressCard progress={3} text="Networking" />
+              <ProgressCard progress={5} text="Programming" />
+              <ProgressCard progress={3} text="Artificial Intelligence" />
+              <ProgressCard progress={4} text="System Design" />
+              <ProgressCard progress={2} text="Platform Engineering" />
+              <ProgressCard progress={3} text="Ethical Hacking" />
             </div>
             <Card.ContinueButton>
               Discover all programming languages
@@ -186,7 +146,7 @@ export default function Home() {
               <span className="text-green-500 font-bold">Kurabu</span>.
             </Card.MainText>
             <div className="flex-1 z-20 mb-8">
-              <div className="max-w-96 mx-auto my-4 p-4 bg-zinc-900 rounded-2xl border border-zinc-800">
+              <div className="max-w-96 mx-auto my-4 p-4 dark:bg-neutral-900 bg-neutral-100 rounded-2xl dark:shadow-neutral-700 shadow-neutral-500 shadow-md">
                 <Image
                   src={kurabuScreenshot}
                   alt="Search page of the app, kurabu, with 'slime' in the search bar."
@@ -218,33 +178,33 @@ export default function Home() {
           <Card color={sectionColors[1].hoverColor}>
             <Card.MainText>Practice projects</Card.MainText>
             <div className="w-full mx-auto mt-8 mb-8 flex-1 z-20">
-              <div className="m-2 p-4 bg-neutral-900 rounded-md hover:scale-105 transition-transform duration-75">
+              <div className="m-2 p-4 dark:bg-neutral-900 bg-neutral-100 rounded-md hover:scale-105 transition-transform duration-75">
                 <h3 className="font-semibold">Porti</h3>
                 <p className="mb-2">Source control service.</p>
                 <div className="text-sm flex flex-row flex-wrap gap-2">
-                  <p className="bg-orange-950 border-orange-900 bg-opacity-90 border-solid border rounded-md px-1">DDD</p>
-                  <p className="bg-blue-950 border-blue-900 bg-opacity-90 border-solid border rounded-md px-1">Rust</p>
-                  <p className="bg-red-950 border-red-900 bg-opacity-90 border-solid border rounded-md px-1">Event sourcing</p>
-                  <p className="bg-green-950 border-green-900 bg-opacity-90 border-solid border rounded-md px-1">Open Telemetry</p>
-                  <p className="bg-yellow-950 border-yellow-900 bg-opacity-90 border-solid border rounded-md px-1">KurrenDB</p>
+                  <Badge variant="orange" label="DDD"/>
+                  <Badge variant="blue" label="Rust"/>
+                  <Badge variant="red" label="Event sourcing"/>
+                  <Badge variant="green" label="Open Telementry"/>
+                  <Badge variant="yellow" label="KurrentDB"/>
                 </div>
               </div>
 
-              <div className="m-2 p-4 bg-neutral-900 rounded-md hover:scale-105 transition-transform duration-75">
+              <div className="m-2 p-4 dark:bg-neutral-900 bg-neutral-100 rounded-md hover:scale-105 transition-transform duration-75">
                 <h3 className="font-semibold">Messaging system</h3>
                 <p className="mb-2">Microservice messaging system.</p>
                 <div className="text-sm flex flex-row flex-wrap gap-2">
-                  <p className="bg-purple-950 border-purple-900 bg-opacity-90 border-solid border rounded-md px-1">Redis</p>
-                  <p className="bg-blue-950 border-blue-900 bg-opacity-90 border-solid border rounded-md px-1">Rust</p>
-                  <p className="bg-teal-950 border-teal-900 bg-opacity-90 border-solid border rounded-md px-1">Typescript</p>
-                  <p className="bg-green-950 border-green-900 bg-opacity-90 border-solid border rounded-md px-1">Kafka</p>
-                  <p className="bg-lime-950 border-lime-900 bg-opacity-90 border-solid border rounded-md px-1">gRPC</p>
-                  <p className="bg-red-950 border-red-900 bg-opacity-90 border-solid border rounded-md px-1">kubernetes</p>
+                  <Badge variant="purple" label="Redis"/>
+                  <Badge variant="blue" label="Rust"/>
+                  <Badge variant="teal" label="Typescript"/>
+                  <Badge variant="green" label="Kafka"/>
+                  <Badge variant="lime" label="gRPC"/>
+                  <Badge variant="red" label="Kubernetes"/>
                 </div>
               </div>
             </div>
             <Card.ContinueButton>
-              Discover more practice projects 
+              Discover more practice projects
             </Card.ContinueButton>
           </Card>
         </CardCluster>

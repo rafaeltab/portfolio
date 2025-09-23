@@ -1,12 +1,5 @@
-const sizes = {
-  nav: "mx-8 xl:mx-48 lg:mx-32",
-  body: "xl:mx-80 lg:mx-48 mx-20",
-} as const;
-
-export function Container(
-  props: React.PropsWithChildren & { size: keyof typeof sizes },
-) {
+export function Container(props: React.PropsWithChildren) {
   return (
-    <div className={`${sizes[props.size]} relative`}>{props.children}</div>
+    <div className={`mx-auto max-w-[1000] px-2 relative`}>{props.children}</div>
   );
 }

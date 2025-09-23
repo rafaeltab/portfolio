@@ -110,7 +110,7 @@ export default function Home() {
           <Card color={sectionColors[0].hoverColor}>
             <Card.MainText>Learning paths</Card.MainText>
             <div className="w-full 2xl:w-2/3 lg:w-4/5 mx-auto mt-8 mb-8 flex-1 z-20">
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-110 transition-transform duration-75">
+              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-105 transition-transform duration-75">
                 <h3 className="font-semibold">Networking</h3>
                 <ProgressBulbs
                   color="bg-red-500"
@@ -118,7 +118,7 @@ export default function Home() {
                   progress={3}
                 />
               </div>
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-110 transition-transform duration-75">
+              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-105 transition-transform duration-75">
                 <h3 className="font-semibold">Programming</h3>
                 <ProgressBulbs
                   color="bg-red-500"
@@ -126,7 +126,7 @@ export default function Home() {
                   progress={5}
                 />
               </div>
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-110 transition-transform duration-75">
+              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-105 transition-transform duration-75">
                 <h3 className="font-semibold">Ethical Hacking</h3>
                 <ProgressBulbs
                   color="bg-red-500"
@@ -134,7 +134,7 @@ export default function Home() {
                   progress={3}
                 />
               </div>
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-110 transition-transform duration-75">
+              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-105 transition-transform duration-75">
                 <h3 className="font-semibold">Artificial Intelligence</h3>
                 <ProgressBulbs
                   color="bg-red-500"
@@ -142,7 +142,7 @@ export default function Home() {
                   progress={1}
                 />
               </div>
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-110 transition-transform duration-75">
+              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-105 transition-transform duration-75">
                 <h3 className="font-semibold">Platform Engineering</h3>
                 <ProgressBulbs
                   color="bg-red-500"
@@ -150,7 +150,7 @@ export default function Home() {
                   progress={3}
                 />
               </div>
-              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-110 transition-transform duration-75">
+              <div className="m-2 p-4 bg-neutral-900 rounded-md flex justify-between hover:scale-105 transition-transform duration-75">
                 <h3 className="font-semibold">System Design</h3>
                 <ProgressBulbs
                   color="bg-red-500"
@@ -186,7 +186,7 @@ export default function Home() {
               <span className="text-green-500 font-bold">Kurabu</span>.
             </Card.MainText>
             <div className="flex-1 z-20 mb-8">
-              <div className="m-16 p-4 bg-zinc-900 rounded-2xl border border-zinc-800">
+              <div className="max-w-96 mx-auto my-4 p-4 bg-zinc-900 rounded-2xl border border-zinc-800">
                 <Image
                   src={kurabuScreenshot}
                   alt="Search page of the app, kurabu, with 'slime' in the search bar."
@@ -217,8 +217,8 @@ export default function Home() {
           </Card>
           <Card color={sectionColors[1].hoverColor}>
             <Card.MainText>Practice projects</Card.MainText>
-            <div className="w-full 2xl:w-2/3 lg:w-4/5 mx-auto mt-8 mb-8 flex-1 z-20">
-              <div className="m-2 p-4 bg-neutral-900 rounded-md hover:scale-110 transition-transform duration-75">
+            <div className="w-full mx-auto mt-8 mb-8 flex-1 z-20">
+              <div className="m-2 p-4 bg-neutral-900 rounded-md hover:scale-105 transition-transform duration-75">
                 <h3 className="font-semibold">Porti</h3>
                 <p className="mb-2">Source control service.</p>
                 <div className="text-sm flex flex-row flex-wrap gap-2">
@@ -230,7 +230,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="m-2 p-4 bg-neutral-900 rounded-md hover:scale-110 transition-transform duration-75">
+              <div className="m-2 p-4 bg-neutral-900 rounded-md hover:scale-105 transition-transform duration-75">
                 <h3 className="font-semibold">Messaging system</h3>
                 <p className="mb-2">Microservice messaging system.</p>
                 <div className="text-sm flex flex-row flex-wrap gap-2">

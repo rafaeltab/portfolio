@@ -73,7 +73,7 @@ export function HeroSection() {
         <div className="items-center flex flex-col">
           <div id="hero-title" className="lg:w-auto w-min">
             <h1>
-              <div className="font-extrabold tracking-wider flex flex-wrap lg:flex-nowrap lg:gap-8 text-6xl sm:text-7xl md:text-8xl lg:text-7xl xl:text-8xl">
+              <div className="font-extrabold tracking-wider flex flex-wrap lg:flex-nowrap lg:gap-8 text-7xl sm:text-8xl md:text-8xl lg:text-7xl xl:text-8xl">
                 <span className={learnClass}>Learn;</span>
                 <span className={practiceClass}>Practice;</span>
                 <span className={inspireClass}>Inspire;</span>

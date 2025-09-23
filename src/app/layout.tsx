@@ -46,28 +46,30 @@ function Body({ children }: React.PropsWithChildren) {
   return (
     <>
       <header className="fixed top-0 w-full h-16 z-50 overflow-hidden border-b border-solid border-neutral-700 bg-opacity-60 backdrop-blurry">
-        <Container size="nav">
-          <nav className="flex items-center h-16 gap-12 text-sm">
-            <Link href="/">
-              <Image
-                src={"MyProfilePicFullNoBack.svg"}
-                alt={"Rafaeltab"}
-                width={140}
-                height={140}
-              />
-            </Link>
-            <div
-              id="nav-links"
-              className="flex gap-6 dark:text-neutral-500 text-neutral-900"
-            >
-              <NavLink href="/tech" title="Tech" />
-              <NavLink href="/projects" title="Projects" />
-              <NavLink href="/timeline" title="Timeline" />
-            </div>
-            <div className="ml-auto">
-              <ThemeSwitch />
-            </div>
-          </nav>
+        <Container>
+          <div className="mx-4">
+            <nav className="flex items-center h-16 gap-12 text-sm">
+              <Link href="/">
+                <Image
+                  src={"MyProfilePicFullNoBack.svg"}
+                  alt={"Rafaeltab"}
+                  width={140}
+                  height={140}
+                />
+              </Link>
+              <div
+                id="nav-links"
+                className="flex gap-6 dark:text-neutral-500 text-neutral-900"
+              >
+                <NavLink href="/tech" title="Tech" />
+                <NavLink href="/projects" title="Projects" />
+                <NavLink href="/timeline" title="Timeline" />
+              </div>
+              <div className="ml-auto">
+                <ThemeSwitch />
+              </div>
+            </nav>
+          </div>
         </Container>
       </header>
 

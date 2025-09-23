@@ -42,8 +42,8 @@ export function HeroSection() {
   const textColor = "text-black dark:text-zinc-300";
   const transition = "transition-color duration-1000 ";
   const bgGradient = "bg-gradient-to-r";
-  const commonClass = `inline font-extrabold text-opacity-0 ${textColor} bg-clip-text ${transition} ${bgGradient}`;
-  const inactiveColorClass = "text-opacity-100";
+  const commonClass = `inline font-extrabold text-opacity-0 dark:text-opacity-0 ${textColor} bg-clip-text ${transition} ${bgGradient}`;
+  const inactiveColorClass = "text-opacity-100 dark:text-opacity-100";
 
   const allOn = false;
 

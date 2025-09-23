@@ -59,7 +59,7 @@ export default function Home() {
 
   return (
     <div className="items-center justify-center">
-      <Container size="body">
+      <Container>
         <GitThread thread={threadElements} />
         <HeroSection />
         <div className="pl-20">

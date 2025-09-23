@@ -31,7 +31,6 @@ export const heroColors = [
 
 export function HeroSection() {
   const [colorTurn, setColorTurn] = useState<0 | 1 | 2>(0);
-  const { theme } = useTheme();
   const [learnMoreHover, setLearnMoreHover] = useState(false);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -40,7 +39,7 @@ export function HeroSection() {
 
     return () => clearInterval(interval);
   });
-  const textColor = theme == "light" ? "text-black" : "text-zinc-300";
+  const textColor = "text-black dark:text-zinc-300";
   const transition = "transition-color duration-1000 ";
   const bgGradient = "bg-gradient-to-r";
   const commonClass = `inline font-extrabold text-opacity-0 ${textColor} bg-clip-text ${transition} ${bgGradient}`;

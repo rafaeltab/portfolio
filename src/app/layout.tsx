@@ -45,7 +45,7 @@ function Providers({ children }: React.PropsWithChildren) {
 function Body({ children }: React.PropsWithChildren) {
   return (
     <>
-      <header className="fixed top-0 w-full h-16 z-20 overflow-hidden border-b border-solid border-neutral-700 bg-opacity-60 backdrop-blurry">
+      <header className="fixed top-0 w-full h-16 z-50 overflow-hidden border-b border-solid border-neutral-700 bg-opacity-60 backdrop-blurry">
         <Container size="nav">
           <nav className="flex items-center h-16 gap-12 text-sm">
             <Link href="/">

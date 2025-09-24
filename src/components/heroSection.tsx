@@ -1,6 +1,5 @@
 import { Balancer } from "react-wrap-balancer";
 import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
 
 export const heroColors = [
   [

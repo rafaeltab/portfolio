@@ -8,7 +8,6 @@ import Balancer from "react-wrap-balancer";
 import { Card, CardCluster } from "../components/card";
 import { Inter } from "next/font/google";
 import { TechCloud } from "../components/techcloud";
-import { ProgressBulbs } from "../components/progressBulbs";
 import Image from "next/image";
 import kurabuScreenshot from "../../public/KurabuScreenshot.png";
 import { ProgressCard } from "@/components/progressCard";

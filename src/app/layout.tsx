@@ -6,14 +6,9 @@ import { Inter } from "next/font/google";
 import { Container } from "../components/container";
 import { NavLink } from "../components/nav/navlink";
 import { Analytics } from "@vercel/analytics/react";
-import { ThemeProvider, useTheme } from "next-themes";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faComputer,
-  faLightbulb,
-  faMoon,
-} from "@fortawesome/free-solid-svg-icons";
+import { ThemeProvider } from "next-themes";
 import Link from "next/link";
+import { ThemeSwitch } from "@/components/themeSwitch";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,29 +40,31 @@ function Providers({ children }: React.PropsWithChildren) {
 function Body({ children }: React.PropsWithChildren) {
   return (
     <>
-      <header className="fixed top-0 w-full h-16 z-20 overflow-hidden border-b border-solid border-neutral-700 bg-opacity-60 backdrop-blurry">
-        <Container size="nav">
-          <nav className="flex items-center h-16 gap-12 text-sm">
-            <Link href="/">
-              <Image
-                src={"MyProfilePicFullNoBack.svg"}
-                alt={"Rafaeltab"}
-                width={140}
-                height={140}
-              />
-            </Link>
-            <div
-              id="nav-links"
-              className="flex gap-6 dark:text-neutral-500 text-neutral-900"
-            >
-              <NavLink href="/tech" title="Tech" />
-              <NavLink href="/projects" title="Projects" />
-              <NavLink href="/timeline" title="Timeline" />
-            </div>
-            <div className="ml-auto">
-              <ThemeSwitch />
-            </div>
-          </nav>
+      <header className="fixed top-0 w-full h-16 z-50 overflow-hidden border-b border-solid border-neutral-700 bg-opacity-60 backdrop-blurry">
+        <Container>
+          <div className="mx-4">
+            <nav className="flex items-center h-16 gap-12 text-sm">
+              <Link href="/">
+                <Image
+                  src={"MyProfilePicFullNoBack.svg"}
+                  alt={"Rafaeltab"}
+                  width={140}
+                  height={140}
+                />
+              </Link>
+              <div
+                id="nav-links"
+                className="flex gap-6 dark:text-neutral-500 text-neutral-900"
+              >
+                <NavLink href="/tech" title="Tech" />
+                <NavLink href="/projects" title="Projects" />
+                <NavLink href="/timeline" title="Timeline" />
+              </div>
+              <div className="ml-auto">
+                <ThemeSwitch />
+              </div>
+            </nav>
+          </div>
         </Container>
       </header>
 
@@ -78,40 +75,3 @@ function Body({ children }: React.PropsWithChildren) {
   );
 }
 
-const themes = {
-  dark: <FontAwesomeIcon icon={faMoon} />,
-  light: <FontAwesomeIcon icon={faLightbulb} />,
-  system: <FontAwesomeIcon icon={faComputer} />,
-} as const;
-
-function ThemeSwitch() {
-  const { theme } = useTheme();
-
-  if (theme !== undefined && theme in themes) {
-    const selectedTheme = theme as keyof typeof themes;
-
-    return (
-      <ThemeButton theme={selectedTheme}>{themes[selectedTheme]}</ThemeButton>
-    );
-  }
-  return <ThemeButton theme="dark">{themes.dark}</ThemeButton>;
-}
-
-function ThemeButton(
-  props: { theme: keyof typeof themes } & React.PropsWithChildren,
-) {
-  const { setTheme } = useTheme();
-  const themeKeys = Object.keys(themes) as (keyof typeof themes)[];
-  return (
-    <button
-      onClick={() => {
-        setTheme(
-          themeKeys[(themeKeys.indexOf(props.theme) + 1) % themeKeys.length],
-        );
-      }}
-      className="dark:text-neutral-500 text-neutral-900"
-    >
-      {props.children}
-    </button>
-  );
-}

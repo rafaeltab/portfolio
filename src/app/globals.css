@@ -18,12 +18,10 @@
 
 .backdrop-blurry {
   backdrop-filter: saturate(180%) blur(5px);
-  -webkit-backdrop-filter: saturate(180%) blur(5px);
 }
 
 .backdrop-blurry-after::after {
   backdrop-filter: saturate(180%) blur(5px);
-  -webkit-backdrop-filter: saturate(180%) blur(5px);
 }
 
 ::-webkit-scrollbar {

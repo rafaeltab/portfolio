@@ -1,7 +1,7 @@
 type Props = {
   color: string;
   borderColor: string;
-  progress: number;
+  progress: 1 | 2 | 3 | 4 | 5;
 };
 
 export function ProgressBulbs(props: Props) {

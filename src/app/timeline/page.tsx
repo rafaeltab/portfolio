@@ -13,7 +13,7 @@ export default function Home() {
   // Job at Methylium
   return (
     <div className="items-center justify-center">
-      <Container size="body">
+      <Container>
         <section className="ml-20 mt-8 bg-opacity-10 bg-gray-300 rounded-md xl:w-2/3 w-3/4 p-10">
           <h2 className="text-2xl pb-2 text-orange-400">
             <Balancer>Exploring Coding Through Minecraft</Balancer>

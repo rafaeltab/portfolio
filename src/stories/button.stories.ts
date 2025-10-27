@@ -21,14 +21,13 @@ type Story = StoryObj<typeof meta>;
 export const Gray: Story = {
   args: {
     text: "Hello",
-    variant: "gray"
+    variant: "gray",
   },
 };
 
 export const Blue: Story = {
   args: {
     text: "Hello",
-    variant: "blue"
+    variant: "blue",
   },
 };
-

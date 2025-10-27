@@ -23,8 +23,8 @@ export function HeroPattern() {
       squaries.push(square);
     }
 
-    setSquares(() => {
-      return squaries;
+    new Promise(() => {
+      setSquares(squaries);
     });
 
     const interval = setInterval(() => {

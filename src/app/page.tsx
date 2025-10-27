@@ -224,6 +224,46 @@ export default function Home() {
             </Balancer>
           </h3>
         </div>
+        <CardCluster>
+          <Card color={sectionColors[2].hoverColor}>
+            <Card.MainText>Supporting open source communities</Card.MainText>
+            <div className="flex-1 z-20 mb-8">Add turbo here</div>
+            <Card.ContinueButton>
+              Visit my favorite communities
+            </Card.ContinueButton>
+          </Card>
+          <Card color={sectionColors[2].hoverColor}>
+            <Card.MainText>Public speaking at events</Card.MainText>
+            <div className="w-1/2 mx-auto mt-8 mb-8 flex-1 z-20">
+              {/* Add something about flutter holland here, with the diffent locations. */}
+              <ol className="list-decimal font-bold text-xl">
+                <li className="text-blue-500">Flutter Holland</li>
+                <li className="text-blue-500">Typescript</li>
+                <li className="text-blue-400">Angular</li>
+                <li className="text-neutral-500">Flutter</li>
+                <li className="text-neutral-600">Rust</li>
+                <li className="text-neutral-700">...</li>
+              </ol>
+            </div>
+            <Card.ContinueButton>Watch the videos</Card.ContinueButton>
+          </Card>
+          <Card color={sectionColors[2].hoverColor}>
+            <Card.MainText>Inspiring colleagues at every step</Card.MainText>
+            <div className="w-full mx-auto mt-8 mb-8 flex-1 z-20"></div>
+            hi
+            <Card.ContinueButton>
+              Discover more practice projects
+            </Card.ContinueButton>
+          </Card>
+          <Card color={sectionColors[2].hoverColor}>
+            <Card.MainText>Inspiring colleagues at every step</Card.MainText>
+            <div className="w-full mx-auto mt-8 mb-8 flex-1 z-20"></div>
+            hi
+            <Card.ContinueButton>
+              Discover more practice projects
+            </Card.ContinueButton>
+          </Card>
+        </CardCluster>
       </Container>
     </div>
   );

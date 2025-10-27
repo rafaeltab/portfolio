@@ -96,7 +96,6 @@ const fontScale = scaleLog({
 
 function getWordColor(size: number) {
   const normal = (size - minSize) / (maxSize - minSize);
-  console.log(normal);
   for (const color of colors) {
     if (color.threshold <= normal) return color.color;
   }

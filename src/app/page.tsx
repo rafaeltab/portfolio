@@ -124,6 +124,7 @@ export default function Home() {
           </Card>
         </CardCluster>
         <div className="pl-20">
+        {/* eslint-disable-next-line react-hooks/refs */ }
           <h2 ref={threadElements[1].relativeTo} className="text-2xl mb-4">
             Practice
           </h2>
@@ -208,6 +209,7 @@ export default function Home() {
           </Card>
         </CardCluster>
         <div className="pl-20">
+        {/* eslint-disable-next-line react-hooks/refs */ }
           <h2 ref={threadElements[2].relativeTo} className="text-2xl mb-4">
             Inspire
           </h2>

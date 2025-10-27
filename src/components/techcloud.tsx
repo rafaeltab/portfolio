@@ -110,7 +110,7 @@ export function TechCloud(props: { font: NextFont }) {
       <Wordcloud
         words={words}
         fontSize={(datum: WordData) => fontScale(datum.value)}
-        { /* eslint-disable-next-line react-hooks/refs */ ...{}}
+        // eslint-disable-next-line react-hooks/refs
         width={divRef.current?.clientWidth ?? 0}
         height={700}
         font={props.font.style.fontFamily}

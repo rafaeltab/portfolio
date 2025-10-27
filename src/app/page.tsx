@@ -124,7 +124,7 @@ export default function Home() {
           </Card>
         </CardCluster>
         <div className="pl-20">
-        {/* eslint-disable-next-line react-hooks/refs */ }
+          {/* eslint-disable-next-line react-hooks/refs */}
           <h2 ref={threadElements[1].relativeTo} className="text-2xl mb-4">
             Practice
           </h2>
@@ -182,11 +182,11 @@ export default function Home() {
                 <h3 className="font-semibold">Porti</h3>
                 <p className="mb-2">Source control service.</p>
                 <div className="text-sm flex flex-row flex-wrap gap-2">
-                  <Badge variant="orange" label="DDD"/>
-                  <Badge variant="blue" label="Rust"/>
-                  <Badge variant="red" label="Event sourcing"/>
-                  <Badge variant="green" label="Open Telementry"/>
-                  <Badge variant="yellow" label="KurrentDB"/>
+                  <Badge variant="orange" label="DDD" />
+                  <Badge variant="blue" label="Rust" />
+                  <Badge variant="red" label="Event sourcing" />
+                  <Badge variant="green" label="Open Telementry" />
+                  <Badge variant="yellow" label="KurrentDB" />
                 </div>
               </div>
 
@@ -194,12 +194,12 @@ export default function Home() {
                 <h3 className="font-semibold">Messaging system</h3>
                 <p className="mb-2">Microservice messaging system.</p>
                 <div className="text-sm flex flex-row flex-wrap gap-2">
-                  <Badge variant="purple" label="Redis"/>
-                  <Badge variant="blue" label="Rust"/>
-                  <Badge variant="teal" label="Typescript"/>
-                  <Badge variant="green" label="Kafka"/>
-                  <Badge variant="lime" label="gRPC"/>
-                  <Badge variant="red" label="Kubernetes"/>
+                  <Badge variant="purple" label="Redis" />
+                  <Badge variant="blue" label="Rust" />
+                  <Badge variant="teal" label="Typescript" />
+                  <Badge variant="green" label="Kafka" />
+                  <Badge variant="lime" label="gRPC" />
+                  <Badge variant="red" label="Kubernetes" />
                 </div>
               </div>
             </div>
@@ -209,7 +209,7 @@ export default function Home() {
           </Card>
         </CardCluster>
         <div className="pl-20">
-        {/* eslint-disable-next-line react-hooks/refs */ }
+          {/* eslint-disable-next-line react-hooks/refs */}
           <h2 ref={threadElements[2].relativeTo} className="text-2xl mb-4">
             Inspire
           </h2>

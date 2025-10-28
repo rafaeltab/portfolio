@@ -6,6 +6,9 @@ export type FlagSet = MustExtend<
     techPage?: boolean;
     timelinePage?: boolean;
     projectsPage?: boolean;
+    homeLearnCluster?: boolean;
+    homePracticeCluster?: boolean;
+    homeInspireCluster?: boolean;
   },
   LDFlagSet
 >;

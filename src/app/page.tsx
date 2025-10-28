@@ -118,7 +118,7 @@ function PracticeSection({
           </Balancer>
         </h3>
       </div>
-      <FeatureFlagged flag="homePracticeCluster">
+      <FeatureFlagged flag="homePracticeCluster" default>
         <CardCluster>
           <Card className="row-span-2" color={sectionColor.hoverColor}>
             <Card.MainText>

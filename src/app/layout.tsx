@@ -9,6 +9,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import { ThemeSwitch } from "@/components/themeSwitch";
+import { LDProvider, useFlags } from "launchdarkly-react-client-sdk";
+import { useFeatureFlags } from "@/types/flagSet";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,12 +34,16 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
 function Providers({ children }: React.PropsWithChildren) {
   return (
     <ThemeProvider enableSystem={true} defaultTheme="dark" attribute="class">
-      {children}
+      <LDProvider clientSideID="6900a22d1077720991f3301b">
+        {children}
+      </LDProvider>
     </ThemeProvider>
   );
 }
 
 function Body({ children }: React.PropsWithChildren) {
+  const { techPage, projectsPage, timelinePage } = useFeatureFlags();
+
   return (
     <>
       <header className="fixed top-0 w-full h-16 z-50 overflow-hidden border-b border-solid border-neutral-700 bg-opacity-60 backdrop-blurry">
@@ -56,9 +62,15 @@ function Body({ children }: React.PropsWithChildren) {
                 id="nav-links"
                 className="flex gap-6 dark:text-neutral-500 text-neutral-900"
               >
-                <NavLink href="/tech" title="Tech" />
-                <NavLink href="/projects" title="Projects" />
-                <NavLink href="/timeline" title="Timeline" />
+                {techPage == true ? (
+                  <NavLink href="/tech" title="Tech" />
+                ) : null}
+                {projectsPage == true ? (
+                  <NavLink href="/projects" title="Projects" />
+                ) : null}
+                {timelinePage == true ? (
+                  <NavLink href="/timeline" title="Timeline" />
+                ) : null}
               </div>
               <div className="ml-auto">
                 <ThemeSwitch />

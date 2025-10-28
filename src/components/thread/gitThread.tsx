@@ -1,8 +1,9 @@
+import { useFeatureFlags } from "@/types/flagSet";
 import { useWindowSize } from "../../hooks/window_size";
 import { RefObject, useEffect, useRef } from "react";
 
 export type ThreadElement = {
-  relativeTo: RefObject<HTMLElement | null>;
+  relativeTo: RefObject<HTMLHeadingElement | null>;
   kind: "commit" | "branch-marge" | "branch" | "branch-rebase";
   color: string;
   beforeGradient: string[];
@@ -13,6 +14,7 @@ export function GitThread(props: { thread: ThreadElement[] }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const divRef = useRef<HTMLDivElement | null>(null);
   const windowSize = useWindowSize();
+  const flags = useFeatureFlags();
 
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -106,7 +108,7 @@ export function GitThread(props: { thread: ThreadElement[] }) {
         ctx.closePath();
       }
     }
-  }, [props.thread, windowSize]);
+  }, [props.thread, windowSize, flags]);
 
   return (
     <div ref={divRef} className="absolute w-full h-full mt-16 -z-10">

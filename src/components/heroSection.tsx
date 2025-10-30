@@ -41,14 +41,15 @@ export function HeroSection() {
   const textColor = "text-black dark:text-zinc-300";
   const transition = "transition-color duration-1000 ";
   const bgGradient = "bg-gradient-to-r";
-  const commonClass = `inline font-extrabold text-opacity-0 dark:text-opacity-0 ${textColor} bg-clip-text ${transition} ${bgGradient}`;
+  // pb-2 needed because otherwise the background is smaller than the text, which when clipped leads to smaller letters.
+  const commonClass = `pb-2 text-opacity-0 dark:text-opacity-0 ${textColor} ${transition} ${bgGradient} bg-clip-text`;
   const inactiveColorClass = "text-opacity-100 dark:text-opacity-100";
 
   const allOn = false;
 
   const learnClass = `${commonClass} ${heroColors[0].join(" ")} ${colorTurn == 0 || allOn ? "" : inactiveColorClass}`;
   const practiceClass = `${commonClass} ${heroColors[1].join(" ")} ${colorTurn == 1 || allOn ? "" : inactiveColorClass}`;
-  const inspireClass = `${commonClass} ${heroColors[2].join(" ")} ${colorTurn == 2 || allOn ? "" : inactiveColorClass}`;
+  const inspireClass = ` ${commonClass} ${heroColors[2].join(" ")} ${colorTurn == 2 || allOn ? "" : inactiveColorClass}`;
 
   function learnMoreGradientClass(nr: 0 | 1 | 2) {
     return `before:-z-20 before:rounded-lg before:absolute before:top-0 before:right-0 before:bottom-0 before:left-0 before:-m-px before:bg-gradient-to-br ${heroColors[nr].join(" ")}`;

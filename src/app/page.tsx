@@ -263,7 +263,7 @@ function LearnSection({
               <ProgressCard progress={3} text="Ethical Hacking" />
             </div>
             <Card.ContinueButton>
-              Discover all programming languages
+              Discover all learning paths
             </Card.ContinueButton>
           </Card>
         </CardCluster>

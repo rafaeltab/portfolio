@@ -9,8 +9,9 @@ import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import { ThemeSwitch } from "@/components/themeSwitch";
-import { LDProvider, useFlags } from "launchdarkly-react-client-sdk";
+import { LDProvider } from "launchdarkly-react-client-sdk";
 import { useFeatureFlags } from "@/types/flagSet";
+import { HeroVariantProvider } from "@/components/heroVariant";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,7 +36,7 @@ function Providers({ children }: React.PropsWithChildren) {
   return (
     <ThemeProvider enableSystem={true} defaultTheme="dark" attribute="class">
       <LDProvider clientSideID="6900a22d1077720991f3301b">
-        {children}
+        <HeroVariantProvider>{children}</HeroVariantProvider>
       </LDProvider>
     </ThemeProvider>
   );

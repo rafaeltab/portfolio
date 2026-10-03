@@ -95,9 +95,7 @@ export default function Home() {
               </Balancer>
             </h3>
           </div>
-          <FeatureFlagged flag="homeInspireCluster" default>
-            <InspireGrid color={sectionColors[2].hoverColor} />
-          </FeatureFlagged>
+          <InspireGrid color={sectionColors[2].hoverColor} />
         </section>
       </Container>
     </div>

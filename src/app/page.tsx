@@ -13,6 +13,7 @@ import kurabuScreenshot from "../../public/KurabuScreenshot.png";
 import { ProgressCard } from "@/components/progressCard";
 import { Badge } from "@/components/badge";
 import { FeatureFlagged } from "@/components/featureFlag";
+import { InspireGrid } from "@/components/inspireGrid";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -72,22 +73,32 @@ export default function Home() {
           threadElement={threadElements[1]}
           sectionColor={sectionColors[1]}
         />
-        <div className="pl-20">
-          {/* eslint-disable-next-line react-hooks/refs */}
-          <h2 ref={threadElements[2].relativeTo} className="text-2xl mb-4">
-            Inspire
-          </h2>
-          <h3 className="text-4xl tracking-normal w-3/4">
-            <Balancer>
-              <span className={"text-blue-500"}>
-                Empowering the Engineering Community.
-              </span>
-              &nbsp; I share knowledge and experience to inspire fellow
-              engineers. Through teaching and mentoring, I enrich their journeys
-              and deepen my understanding, fostering growth and expertise.
-            </Balancer>
-          </h3>
-        </div>
+        <section aria-labelledby="inspire-heading">
+          <div className="pl-20">
+            <h2
+              // eslint-disable-next-line react-hooks/refs
+              ref={threadElements[2].relativeTo}
+              id="inspire-heading"
+              className="text-2xl mb-4"
+            >
+              Inspire
+            </h2>
+            <h3 className="text-4xl tracking-normal w-3/4">
+              <Balancer>
+                <span className={"text-blue-500"}>
+                  Empowering the Engineering Community.
+                </span>
+                &nbsp; I share knowledge and experience to inspire fellow
+                engineers. Through teaching and mentoring, I enrich their
+                journeys and deepen my understanding, fostering growth and
+                expertise.
+              </Balancer>
+            </h3>
+          </div>
+          <FeatureFlagged flag="homeInspireCluster" default>
+            <InspireGrid color={sectionColors[2].hoverColor} />
+          </FeatureFlagged>
+        </section>
       </Container>
     </div>
   );

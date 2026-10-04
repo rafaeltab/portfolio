@@ -2,6 +2,7 @@
   "name": "rafaeltab-portfolio",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@9.15.9",
   "scripts": {
     "dev": "next dev --turbopack -p 3001",
     "build": "next build",
@@ -59,7 +60,7 @@
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-wrap-balancer": "^1.1.0",
-    "storybook": "^8.6.12",
+    "storybook": "^8.6.17",
     "tailwindcss": "^3.4.17",
     "typescript": "5.7.2"
   },
